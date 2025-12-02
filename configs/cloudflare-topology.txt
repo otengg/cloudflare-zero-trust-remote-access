@@ -1,0 +1,24 @@
+              Internet User
+                    |
+                    v
+        +---------------------------+
+        |        Cloudflare         |
+        |  - DNS (proxied records)  |
+        |  - Zero Trust / Access    |
+        |  - Tunnel Endpoint        |
+        +-------------+-------------+
+                      |
+                      |  (outbound-only tunnel)
+                      v
+            +------------------------+
+            |  cloudflared Connector |
+            |   (Linux VM in lab)    |
+            +-----------+------------+
+                        |
+                        v
+              +----------------------+
+              |      pfSense LAN     |
+              |  10.0.10.0/24 etc.   |
+              |  - pfSense UI        |
+              |  - Dashboards / Apps |
+              +----------------------+

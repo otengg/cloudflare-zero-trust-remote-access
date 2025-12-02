@@ -1,0 +1,3 @@
+hostname,type,target,proxy
+pfsense.mydomain.com,CNAME,<tunnel-uuid>.cfargotunnel.com,true
+dashboard.mydomain.com,CNAME,<tunnel-uuid>.cfargotunnel.com,true

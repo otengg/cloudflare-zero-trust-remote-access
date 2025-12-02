@@ -1,0 +1,17 @@
+# Example Cloudflare Tunnel configuration for my homelab.
+# This is a sanitized sample (no real IDs or secrets).
+
+tunnel: homelab-tunnel
+credentials-file: /etc/cloudflared/<tunnel-id>.json
+
+ingress:
+  # pfSense UI
+  - hostname: pfsense.mydomain.com
+    service: https://10.0.10.1:443
+
+  # Example dashboard / internal app
+  - hostname: dashboard.mydomain.com
+    service: http://10.0.20.50:3000
+
+  # Default catch-all
+  - service: http_status:404
