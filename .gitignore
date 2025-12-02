@@ -1,0 +1,13 @@
+```gitignore
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# No secrets in git
+secrets/
+*.key
+*.pem
+*.crt
+.env
