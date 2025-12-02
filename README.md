@@ -50,30 +50,30 @@ This repo walks through:
 
 # 🧱 Architecture
 
-
-      Internet User
-            |
-            v
-  +---------------------------+
-  |        Cloudflare         |
-  |  - DNS (proxied records)  |
-  |  - Zero Trust / Access    |
-  |  - Tunnel Endpoint        |
-  +-------------+-------------+
+```
+          Internet User
                 |
-                |  (outbound-only tunnel)
                 v
-      +------------------------+
-      |  cloudflared Connector |
-      |   (Linux VM in lab)    |
-      +-----------+------------+
-                  |
-                  v
-        +----------------------+
-        |      pfSense LAN     |
-        |  Internal Services   |
-        +----------------------+
-
+      +---------------------------+
+      |        Cloudflare         |
+      |  - DNS (proxied records)  |
+      |  - Zero Trust / Access    |
+      |  - Tunnel Endpoint        |
+      +-------------+-------------+
+                    |
+                    |  (outbound-only tunnel)
+                    v
+          +------------------------+
+          |  cloudflared Connector |
+          |   (Linux VM in lab)    |
+          +-----------+------------+
+                      |
+                      v
+            +----------------------+
+            |      pfSense LAN     |
+            |   Internal Services  |
+            +----------------------+
+```
 
 The connector VM creates an encrypted **outbound-only** tunnel to Cloudflare.  
 All traffic enters through Cloudflare → Zero Trust policy → Tunnel → internal service.
